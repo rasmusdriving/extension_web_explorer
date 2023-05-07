@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "My Chatbot Extension",
+    "version": "1.0",
+    "description": "A browser extension to provide context from open tabs to a chatbot.",
+    "permissions": [
+      "tabs",
+      "<all_urls>"
+    ],
+    "background": {
+      "scripts": ["src/background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["src/content-script.js"]
+      }
+    ],
+    "browser_action": {
+      "default_popup": "popup/index.html"
+    }
+  }
+  
